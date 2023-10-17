@@ -23,3 +23,48 @@ class Lecturer(Mentor):
         else:
             return 'У лектора нет оценок'
 
+    def check_type(self, other):
+        return isinstance(other, Lecturer)
+
+    # ==
+    def __eq__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() == other.__get_avg_grades()
+        else:
+            return False
+
+    # !=
+    def __ne__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() != other.__get_avg_grades()
+        else:
+            return False
+
+    # <
+    def __lt__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() < other.__get_avg_grades()
+        else:
+            return False
+
+    # >
+    def __gt__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() > other.__get_avg_grades()
+        else:
+            return False
+
+    # <=
+    def __le__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() <= other.__get_avg_grades()
+        else:
+            return False
+
+    # >=
+    def __ge__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() >= other.__get_avg_grades()
+        else:
+            return False
+

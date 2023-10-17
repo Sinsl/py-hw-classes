@@ -57,6 +57,24 @@ print(lecturer)
 print(student)
 print(student2)
 
+# magic
+
+print('student == student2:', student == student2)
+print('student != student2:', student != student2)
+print('student < student2:', student < student2)
+print('student > student2:', student > student2)
+print('student <= student2:', student <= student2)
+print('student >= student2:', student >= student2)
+print('student == lecturer:', student == lecturer)
+
+print('lecturer == lecturer2:', lecturer == lecturer2)
+print('lecturer != lecturer2:', lecturer != lecturer2)
+print('lecturer < lecturer2:', lecturer < lecturer2)
+print('lecturer > lecturer2:', lecturer > lecturer2)
+print('lecturer <= lecturer2:', lecturer <= lecturer2)
+print('lecturer >= lecturer2:', lecturer >= lecturer2)
+print('lecturer == student:', lecturer == student)
+
 # func 
 
 def get_avg_range_students_course(students_list:list, course:str):

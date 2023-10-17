@@ -44,7 +44,7 @@ class Student:
             return
 
         if course in lecturer.courses_grades:
-                lecturer.courses_grades[course] += [grade]
+            lecturer.courses_grades[course] += [grade]
         else:
             lecturer.courses_grades[course] = [grade]
 
@@ -66,4 +66,49 @@ class Student:
                     count += 1
             return sum_ / count
         else:
-            return 'У студента пока нет оценок'
+            return 0
+
+    def check_type(self, other):
+        return isinstance(other, Student)
+
+    # ==
+    def __eq__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() == other.__get_avg_grades()
+        else:
+            return False
+
+    # !=
+    def __ne__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() != other.__get_avg_grades()
+        else:
+            return False
+
+    # <
+    def __lt__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() < other.__get_avg_grades()
+        else:
+            return False
+
+    # >
+    def __gt__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() > other.__get_avg_grades()
+        else:
+            return False
+
+    # <=
+    def __le__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() <= other.__get_avg_grades()
+        else:
+            return False
+
+    # >=
+    def __ge__(self, other):
+        if self.check_type(other):
+            return self.__get_avg_grades() >= other.__get_avg_grades()
+        else:
+            return False
